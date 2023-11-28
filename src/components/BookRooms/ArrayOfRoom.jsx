@@ -3,8 +3,6 @@ import React from "react";
 function ArrayOfRooms(props) {
   const roomArray = [];
 
-
-
   function BlockRooms(props) {
     if (props.isBooked) {
       return (
@@ -27,7 +25,6 @@ function ArrayOfRooms(props) {
 
   for (let i = 0; i < 9; i++) {
     roomArray.push({
-      id: i,
       roomNumber: props.roomFloor + (i + 1),
       isBooked: false,
     });

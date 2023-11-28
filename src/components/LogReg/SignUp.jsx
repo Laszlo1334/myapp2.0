@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-import './logReg.css'
-
+import "./logReg.css";
 
 export default function Registration(props) {
   const [username, setUsername] = useState("");
@@ -11,8 +10,8 @@ export default function Registration(props) {
 
   const admin = { username, password };
 
-  const handleSub = (e) => { 
-    console.log(admin)
+  const handleSub = (e) => {
+    console.log(admin);
     e.preventDefault();
 
     setIsPending(true);
@@ -21,11 +20,11 @@ export default function Registration(props) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:3000/"
+        "Access-Control-Allow-Origin": "http://localhost:3000/",
       },
       body: JSON.stringify(admin),
     }).then(() => {
-      console.log("response")
+      console.log("response");
       setIsPending(false);
     });
   };
@@ -69,9 +68,7 @@ export default function Registration(props) {
             Wait...
           </button>
         )}
-        <Link to = "/admin/login"
-          className="button-change-reg-log"
-        >
+        <Link to="/admin/login" className="button-change-reg-log">
           Already have an account? Login
         </Link>
       </form>

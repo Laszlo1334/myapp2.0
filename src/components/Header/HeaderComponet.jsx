@@ -6,15 +6,11 @@ function HeaderComponet(props) {
 
   useEffect(() => {
     setState(props.currentPage === props.typeOfPage);
-   
   }, [props, state]);
 
   if (state) {
     return (
-      <Link
-        to={props.toLink}
-        className="nav-element btn-act textblock "
-      >
+      <Link to={props.toLink} className="nav-element btn-act textblock ">
         {props.typeOfPage}
       </Link>
     );

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import axios from "axios";
-import setAuthToken from "axios"
+import setAuthToken from "axios";
 
-import './logReg.css'
-
+import "./logReg.css";
 
 export default function Login(props) {
   const [username, setUsername] = useState("");
@@ -13,32 +12,18 @@ export default function Login(props) {
 
   const admin = { username, password };
 
-  const handleSub = (e) => { 
+  const handleSub = (e) => {
     e.preventDefault();
 
     setIsPending(true);
 
-    // fetch("http://localhost:8080/admin/login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "Access-Control-Allow-Origin": "http://localhost:3000/",
-    //   },
-    //   body: JSON.stringify(admin),
-    // }).then(response => {
-    //   console.log(response.formData);
-    //   console.log("response")
-    //   setIsPending(false);
-    // });
-
-    axios.post("http://localhost:8080/admin/login", admin)
-     .then(response => {
-       const token  =  response.data.token;
-       console.log(token)
-       localStorage.setItem("token", token);
-       setAuthToken(token);
-       window.location.href = '/'
-     })
+    axios.post("http://localhost:8080/admin/login", admin).then((response) => {
+      const token = response.data.token;
+      console.log(token);
+      localStorage.setItem("jwt_token", token);
+      setAuthToken(token);
+      window.location.href = "/";
+    });
   };
 
   return (
@@ -82,9 +67,7 @@ export default function Login(props) {
           </button>
         )}
 
-        <Link to = "/admin/register"
-          className="button-change-reg-log"
-        >
+        <Link to="/admin/register" className="button-change-reg-log">
           Don't have an account? Sign up
         </Link>
       </form>

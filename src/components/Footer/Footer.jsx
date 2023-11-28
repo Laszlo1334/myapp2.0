@@ -4,9 +4,7 @@ import "./footer.css";
 function Footer() {
   return (
     <footer>
-      <div className="footer">
-        © Copyright 2023
-      </div>
+      <div className="footer">© Copyright 2023</div>
     </footer>
   );
 }
