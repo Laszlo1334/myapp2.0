@@ -46,17 +46,17 @@ function App() {
 
             </div>
           </Route>
-          <Route exact path="/admin/demo-controller">
+          <Route exact path="/demo-controller">
             <div>
               <Demo />
             </div>
           </Route>
-          <Route exact path="/admin/login">
+          <Route exact path="/login">
             <div>
               <Login />
             </div>
           </Route>
-          <Route exact path="/admin/register">
+          <Route exact path="/register">
             <div>
               <SignUp />
             </div>

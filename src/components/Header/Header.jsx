@@ -9,13 +9,13 @@ function Header(props) {
       return (
         <>
           <Link
-            to="/admin/login"
+            to="/login"
             className="login-nav-element btn-light-yellow textblock light-yellow-black-textblock"
           >
             LOG IN
           </Link>
           <Link
-            to="/admin/register"
+            to="/register"
             className="login-nav-element btn-light-yellow textblock light-yellow-black-textblock"
           >
             SIGN UP

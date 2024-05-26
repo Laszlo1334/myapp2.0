@@ -16,7 +16,7 @@ export default function Registration(props) {
 
     setIsPending(true);
 
-    fetch("http://localhost:8080/admin/register", {
+    fetch("http://localhost:8080/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +68,7 @@ export default function Registration(props) {
             Wait...
           </button>
         )}
-        <Link to="/admin/login" className="button-change-reg-log">
+        <Link to="/login" className="button-change-reg-log">
           Already have an account? Login
         </Link>
       </form>

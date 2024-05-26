@@ -17,7 +17,7 @@ export default function Login(props) {
 
     setIsPending(true);
 
-    axios.post("http://localhost:8080/admin/login", admin).then((response) => {
+    axios.post("http://localhost:8080/login", admin).then((response) => {
       const token = response.data.token;
       console.log(token);
       localStorage.setItem("jwt_token", token);
@@ -67,7 +67,7 @@ export default function Login(props) {
           </button>
         )}
 
-        <Link to="/admin/register" className="button-change-reg-log">
+        <Link to="/register" className="button-change-reg-log">
           Don't have an account? Sign up
         </Link>
       </form>
